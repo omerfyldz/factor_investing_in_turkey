@@ -1,0 +1,3 @@
+run_name,final_value,initial_cash,total_return_analyzer,annual_return_analyzer,sharpe_analyzer,max_drawdown_pct,total_orders,closed_trades,stock_feeds,selected_score,simple_total_return,role
+base,2812164.4400000004,1000000.0,1.0339544501902858,0.1051524795374887,0.5355008642285596,24.18558989039824,170,80,72,composite_all4,1.8121644400000005,base
+improved_regime_stop,2092916.8400000008,1000000.0,0.7385587102330372,0.0740306894637704,0.76221466100718,14.532354520431824,379,187,72,composite_all4,1.0929168400000009,risk_control_experiment

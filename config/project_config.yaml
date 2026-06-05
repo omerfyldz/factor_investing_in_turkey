@@ -1,0 +1,139 @@
+project:
+  name: "BIST Factor Investing"
+  group_participants: []
+  start_date: "2000-01-01"
+  end_date: null
+  initial_cash: 1000000
+  cash_per_trade: 100000
+  commission: 0.0
+  fundamental_lag_days_annual: 90
+  fundamental_lag_days_quarterly: 45
+  trend_significance_level: 0.05
+  trend_regression_include_intercept: false
+  min_months_for_stock: 24
+  min_stocks_for_quintiles: 10
+  monte_carlo_simulations: 2000
+  random_seed: 5811
+
+index_tickers:
+  XU100: "XU100.IS"
+  XU030: "XU030.IS"
+  XBANK: "XBANK.IS"
+  XUSIN: "XUSIN.IS"
+
+moving_average_lags: [3, 5, 10, 20, 50, 100, 200, 400, 600, 800, 1000]
+
+# Baseline-run Turkish equity universe built from the course notes' BIST
+# large-cap examples. Experimental BIST scripts are kept separately and are
+# not required for the final submitted baseline.
+stock_tickers:
+  - AKBNK
+  - GARAN
+  - ISCTR
+  - VAKBN
+  - HALKB
+  - YKBNK
+  - TSKB
+  - SKBNK
+  - ALBRK
+  - AKGRT
+  - ANHYT
+  - ANSGR
+  - EREGL
+  - KRDMD
+  - IZMDC
+  - PETKM
+  - TUPRS
+  - AYGAZ
+  - AKENR
+  - AKSEN
+  - ALKIM
+  - TOASO
+  - FROTO
+  - DOAS
+  - TTRAK
+  - TMSN
+  - OTKAR
+  - TTKOM
+  - TCELL
+  - ARCLK
+  - VESTL
+  - BIZIM
+  - BIMAS
+  - MGROS
+  - ULKER
+  - GOZDE
+  - AEFES
+  - CCOLA
+  - THYAO
+  - PGSUS
+  - TAVHL
+  - DOCO
+  - SAHOL
+  - KCHOL
+  - TKFEN
+  - ENKAI
+  - DOHOL
+  - SISE
+  - TRKCM
+  - ANACM
+  - SODA
+  - TRGYO
+  - ISGYO
+  - EKGYO
+  - SNGYO
+  - AKFEN
+  - ALARK
+  - ASELS
+  - YAZIC
+  - NTHOL
+  - GUBRF
+  - CIMSA
+  - ECILC
+  - AKSA
+  - ADEL
+  - TRCAS
+  - CLEBI
+  - BAGFS
+  - AKCNS
+  - ANELE
+  - BANVT
+  - BMEKS
+  - BOLUC
+  - BRISA
+  - BRSAN
+  - HURGZ
+  - INDES
+  - KORDS
+  - SELEC
+  - TKNSA
+
+factor_weights:
+  equal_all:
+    roe: 0.25
+    pe: 0.25
+    momentum: 0.25
+    trend: 0.25
+  price_trend:
+    momentum: 0.50
+    trend: 0.50
+  trend_heavy:
+    roe: 0.15
+    pe: 0.15
+    momentum: 0.30
+    trend: 0.40
+  quality_value:
+    roe: 0.50
+    pe: 0.50
+
+backtrader_runs:
+  base:
+    top_n: 10
+    use_regime_filter: false
+    stop_loss_pct: null
+    take_profit_pct: null
+  improved_regime_stop:
+    top_n: 10
+    use_regime_filter: true
+    stop_loss_pct: 0.10
+    take_profit_pct: 0.25

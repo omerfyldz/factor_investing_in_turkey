@@ -1,0 +1,2 @@
+run_name,final_value,initial_cash,total_return_analyzer,annual_return_analyzer,sharpe_analyzer,max_drawdown_pct,total_orders,closed_trades,stock_feeds,selected_score
+improved_regime_stop,1921929.2486648927,1000000.0,0.6533294985619593,0.024565607782178766,0.3737803413349416,18.02964327045689,382,188,72,composite_all4

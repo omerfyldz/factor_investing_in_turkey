@@ -1,0 +1,82 @@
+BIST Factor Investing Validation Report
+============================================
+Data source: Yahoo Finance frozen CSV.
+Raw data folder: data\raw.
+Raw price file: data\raw\yahoo_daily_prices.csv.
+Raw fundamental/ratio file: data\raw\yahoo_fundamentals_long.csv.
+Universe: Turkish equities from config/project_config.yaml; index columns are excluded from stock portfolios.
+Benchmark and trend regression index: XU100 / BIST100.
+Selected strategy score: composite_all4.
+Trend regression: non-significant MA terms are dropped at the configured alpha; the stock-common intercept is excluded from the primary ranking specification and saved as a diagnostic separately.
+Look-ahead handling: factor values at month t are paired with returns at month t+1; Backtrader market orders execute after signal calculation.
+Costs: commission is set to zero as required by the project.
+FMP outputs include portfolio-sort, cross-sectional-regression, common-start comparison, method comparison, IC/rank IC, and selected-date weights.
+Known limitations: fundamental/ratio coverage can be incomplete for some BIST stocks; exact financial statement release dates are proxied by fixed lags or monthly ratio availability; set project.group_participants in config/project_config.yaml before final submission.
+
+Generated files:
+- data\processed\daily_prices_clean.csv
+- data\processed\eps_panel.csv
+- data\processed\factor_raw_long.csv
+- data\processed\factor_zscores_long.csv
+- data\processed\monthly_close.csv
+- data\processed\monthly_returns.csv
+- data\processed\pe_panel.csv
+- data\processed\roe_panel.csv
+- data\processed\score_equal_all.csv
+- data\processed\score_price_trend.csv
+- data\processed\score_quality_value.csv
+- data\processed\score_trend_heavy.csv
+- data\processed\xu100_monthly_ma_deviations.csv
+- data\processed\xu100_regime_filter.csv
+- figures\backtrader_drawdowns.png
+- figures\backtrader_equity_curves.png
+- figures\fmp_portfolio_sort_cumulative.png
+- figures\fmp_regression_cumulative.png
+- figures\information_coefficients.png
+- figures\monte_carlo_sharpe_histogram.png
+- figures\strategy_parameter_heatmap.png
+- presentation\bist_factor_project_presentation.pdf
+- results\backtrader_base_daily_returns.csv
+- results\backtrader_base_equity_curve.csv
+- results\backtrader_base_orders.csv
+- results\backtrader_base_positions.csv
+- results\backtrader_base_summary.csv
+- results\backtrader_base_trades.csv
+- results\backtrader_improved_regime_stop_daily_returns.csv
+- results\backtrader_improved_regime_stop_equity_curve.csv
+- results\backtrader_improved_regime_stop_orders.csv
+- results\backtrader_improved_regime_stop_positions.csv
+- results\backtrader_improved_regime_stop_summary.csv
+- results\backtrader_improved_regime_stop_trades.csv
+- results\base_monthly_top10_positions.csv
+- results\base_monthly_top10_returns.csv
+- results\bootstrap_base_strategy.csv
+- results\bootstrap_summary.csv
+- results\factor_performance_metrics.csv
+- results\fmp_common_start_metrics.csv
+- results\fmp_method_comparison.csv
+- results\fmp_portfolio_sort_returns.csv
+- results\fmp_regression_returns.csv
+- results\fmp_weights_all_dates.csv
+- results\fmp_weights_selected_date.csv
+- results\fundamental_coverage.csv
+- results\information_coefficient_summary.csv
+- results\information_coefficients.csv
+- results\monte_carlo_random_portfolio_sharpes.csv
+- results\monte_carlo_summary.csv
+- results\monthly_factor_coverage.csv
+- results\project_audit_checklist.csv
+- results\selected_strategy_score.csv
+- results\strategy_base_vs_final_comparison.csv
+- results\strategy_development_narrative.txt
+- results\strategy_improvement_tests.csv
+- results\trend_regression_coefficients.csv
+- results\trend_regression_dropped_variables.csv
+- results\trend_regression_selection_note.txt
+- results\trend_regression_with_intercept_diagnostic.csv
+- results\universe_price_audit.csv
+- results\validation_report.txt
+- results\vectorized_strategy_positions.csv
+- results\vectorized_strategy_returns.csv
+- results\walk_forward_results.csv
+- results\walk_forward_summary.csv

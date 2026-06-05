@@ -1,0 +1,18 @@
+Strategy Development Narrative
+==============================
+Goal: build a Turkey/BIST long-only factor strategy that follows the factor-investing project rules.
+
+Best vectorized trial: equal_all_top15_no_regime with Sharpe 1.47, annualized return 54.26%, max drawdown -26.28%.
+Base monthly trial: equal_all_top10_no_regime with Sharpe 1.28, annualized return 51.28%, max drawdown -37.66%.
+Regime filter test: average Sharpe was 1.09 without the filter and 0.77 with the BIST100 filter.
+Trend regression selected mad_1000 at the configured significance level; minimum MA p-value was 0.0008.
+Backtrader base: final value 3078262 TL, simple return 207.83%, Sharpe 0.30, max drawdown 23.84%.
+Backtrader improved_regime_stop: final value 1921929 TL, simple return 92.19%, Sharpe 0.37, max drawdown 18.03%.
+Monte Carlo test: strategy Sharpe 1.28; p-value 0.9045 against random portfolios.
+Walk-forward validation: 44 windows, compounded test return 13119.90%, positive-window rate 75.00%.
+
+Conclusion logic:
+The best-looking in-sample/vectorized result is not accepted blindly.
+The Backtrader base run is the return leader, while the regime/stop experiment is treated as a risk-control test.
+Because the Monte Carlo p-value is not below 5%, the final investment judgment should be cautious.
+The main improvement path was testing factor weights, top-N thresholds, regime filtering, stop/take-profit rules, and walk-forward selection.

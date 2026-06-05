@@ -1,0 +1,19 @@
+requirement,status,evidence,notes,selected_score
+Pinned Python requirements,OK,requirements.txt,Versions are pinned.,composite_all4
+Frozen raw price CSV,OK,data\raw\yahoo_daily_prices.csv,Final analysis reads this file.,composite_all4
+Frozen raw fundamental/ratio CSV,OK,data\raw\yahoo_fundamentals_long.csv,Final analysis reads this financial-statement CSV.,composite_all4
+Turkish stock universe,OK,results\universe_price_audit.csv,Index columns are marked separately and excluded.,composite_all4
+BIST100 trend regression,OK,results\trend_regression_coefficients.csv,Uses XU100 moving-average deviations.,composite_all4
+Four required factor panels,OK,data\processed\factor_zscores_long.csv,"ROE, P/E, momentum, trend plus composites.",composite_all4
+Portfolio-sort FMPs,OK,results\fmp_portfolio_sort_returns.csv,Top quintile minus bottom quintile.,composite_all4
+Regression FMPs,OK,results\fmp_regression_returns.csv,Monthly cross-sectional slopes.,composite_all4
+IC and rank IC,OK,results\information_coefficients.csv,Signal at t versus return at t+1.,composite_all4
+Common-start FMP comparison,OK,results\fmp_common_start_metrics.csv,Required when factor starts differ.,composite_all4
+Selected-date FMP weights,OK,results\fmp_weights_selected_date.csv,Portfolio and regression weights.,composite_all4
+Backtrader base run,OK,results\backtrader_base_summary.csv,"1,000,000 TL, 100,000 TL sizer, zero commission.",composite_all4
+Backtrader improvement run,OK,results\backtrader_improved_regime_stop_summary.csv,Regime plus stop/take-profit test.,composite_all4
+Saved Backtrader details,OK,results\backtrader_base_*.csv,"Trades, positions, orders, returns, equity.",composite_all4
+Monte Carlo Sharpe test,OK,results\monte_carlo_summary.csv,Random same-position-count portfolios.,composite_all4
+Walk-forward validation,OK,results\walk_forward_results.csv,"Parameter selection on train window, test out of sample.",composite_all4
+PDF presentation,OK,presentation\bist_factor_project_presentation.pdf,"Contains project summary, paper summary, results, and conclusion.",composite_all4
+Group names in PDF,NEEDS_INPUT,presentation\bist_factor_project_presentation.pdf,Set project.group_participants in config/project_config.yaml and rerun the project.,composite_all4

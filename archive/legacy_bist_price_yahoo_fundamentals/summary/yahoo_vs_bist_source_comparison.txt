@@ -1,0 +1,13 @@
+Yahoo vs BIST-source comparison
+================================
+The original Yahoo output folders were left intact. The BIST-source run is stored separately under data_bist, results_bist, figures_bist, and presentation_bist.
+BIST-source means official Borsa Istanbul public stock bulletins and public index closes, with the existing frozen Yahoo fundamental file copied in so the same ROE/P/E strategy can run immediately.
+The BIST public stock bulletin prices are not adjusted for dividends/splits, so this is a useful source-sensitivity test rather than a final replacement for adjusted-price research data.
+
+Base Backtrader final value: Yahoo 3078262 TL; BIST-source 2812164 TL.
+Base Backtrader Sharpe analyzer: Yahoo 0.303; BIST-source 0.536.
+Improved run final value: Yahoo 1921929 TL; BIST-source 2092917 TL.
+Improved run Sharpe analyzer: Yahoo 0.374; BIST-source 0.762.
+Monte Carlo p-value: Yahoo 0.9045; BIST-source 0.7595.
+
+Interpretation: BIST-source prices improve risk-adjusted Backtrader metrics, especially for the regime/stop run, but the Monte Carlo p-value remains far above conventional significance thresholds.

@@ -1,0 +1,7 @@
+Trend Regression Selection Note
+===============================
+The project requires a BIST100 predictive regression and dropping non-significant MA-deviation variables.
+Primary selection uses alpha=0.05 and include_intercept=False.
+The intercept is excluded because it is common to all stocks and is removed by cross-sectional z-scoring/ranking.
+A with-intercept diagnostic is saved separately; in the frozen data, the intercept absorbs much of the average index drift.
+Selected MA variables: mad_1000.

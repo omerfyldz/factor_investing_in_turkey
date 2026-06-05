@@ -1,0 +1,2 @@
+term,coef,p_value,t_stat,r_squared,observations,selection_alpha,include_intercept
+mad_1000,0.02399787568495652,0.0007570660622702598,3.407370191485772,0.041671743548491014,268,0.05,False
