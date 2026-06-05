@@ -36,7 +36,9 @@ Confirm `results/project_audit_checklist.csv` contains only `OK`.
 
 The largest required project input is `data/raw/yahoo_daily_prices.csv` at approximately `44.65 MB`, below GitHub's `100 MB` per-file limit.
 
-The dry-run GitHub package contains `117` trackable files totaling approximately `131 MB`.
+The GitHub package contains `110` tracked project files totaling approximately `108.79 MB`.
+
+Course notebooks, lecture PDFs, the assignment PDF, the paper PDF, reference guides, and unrelated S&P example data were removed from tracking so the repository presents the project as independent work.
 
 The experimental BIST raw files are kept locally and ignored for the GitHub submission package.
 
